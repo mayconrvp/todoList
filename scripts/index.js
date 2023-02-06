@@ -121,8 +121,7 @@ function getDataFormatada(data) {
 }
 
 function excluirItemLista(id) {
-    console.log("Excluindo")
-    let arrAtividades = lista.getListaDeAtividades().filter(atividade => atividade.id == id)
+    let arrAtividades = lista.getListaDeAtividades().filter(atividade => atividade.id != id)
     lista.setListaDeAtividades(arrAtividades)
     let listaString = JSON.stringify(lista.getListaDeAtividades());
     localStorage.setItem('atividades', listaString);
